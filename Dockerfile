@@ -5,14 +5,12 @@ USER root
 
 RUN set -eux; \
     \
-    savedAptMark="$(apt-mark showmanual)"; \
     apt-get update; \
     apt-get install -y --no-install-recommends \
         wget \
         xz-utils \
         openjdk-11-jdk \
     ; \
-    apt-mark auto '.*' > /dev/null; \
     \
     # 检测架构并设置 URL 和 JAVA_HOME
     arch="$(dpkg --print-architecture)"; arch="${arch##*-}"; \
@@ -40,8 +38,6 @@ RUN set -eux; \
     chmod +x /etc/profile.d/java.sh; \
     \
     # 清理
-    [ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; \
-    apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
     rm -rf \
         /tmp/* \
         /usr/share/doc/* \
