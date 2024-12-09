@@ -14,7 +14,7 @@ RUN set -eux; \
     \
     # 检测架构并设置 URL 和 JAVA_HOME
     arch="$(dpkg --print-architecture)"; arch="${arch##*-}"; \
-    url='https://github.com/yt-dlp/yt-dlp/releases/download/2024.12.03/yt-dlp_linux'; \
+    url='https://github.com/yt-dlp/yt-dlp/releases/download/2024.11.18/yt-dlp_linux'; \
     case "$arch" in \
         'amd64') \
             JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"; \
