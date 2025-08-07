@@ -12,7 +12,6 @@ on:
   push:
     branches:
       - main
-
 env:
   IMAGE_NAME: "muen/ffmpeg"
   IMAGE_TAG: "7.0.2-openjdk-21"
