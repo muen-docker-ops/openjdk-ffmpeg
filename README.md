@@ -1,1 +1,1 @@
-基于ffmpeg7.0.2安装openjdk11
+基于ffmpeg7.0.2安装openjdk21

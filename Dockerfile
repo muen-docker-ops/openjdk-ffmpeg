@@ -9,7 +9,7 @@ RUN set -eux; \
     apt-get install -y --no-install-recommends \
         wget \
         xz-utils \
-        openjdk-11-jdk \
+        openjdk-21-jdk \
     ; \
     \
     # 检测架构并设置 URL 和 JAVA_HOME
@@ -17,11 +17,11 @@ RUN set -eux; \
     url='https://github.com/yt-dlp/yt-dlp/releases/download/2024.11.18/yt-dlp_linux'; \
     case "$arch" in \
         'amd64') \
-            JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"; \
+            JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"; \
         ;; \
         'arm64') \
             url="${url}_aarch64"; \
-            JAVA_HOME="/usr/lib/jvm/java-11-openjdk-arm64"; \
+            JAVA_HOME="/usr/lib/jvm/java-21-openjdk-arm64"; \
         ;; \
         *) \
             echo "Unsupported architecture: $arch" >&2; exit 1; \
